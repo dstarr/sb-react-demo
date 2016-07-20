@@ -3,13 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 
-
-const dist = path.join(__dirname, 'public', 'dist');
-
-const variables = {
-  'uxcore-market': process.env.LOCALE || 'en',
-  'uxcore-label': process.env.UXCORE_LABEL || 'gd'
-};
+const dist = path.join(__dirname, '..', 'server', 'public', 'dist');
 
 module.exports = {
 
@@ -19,25 +13,36 @@ module.exports = {
     filename: path.join(dist, 'bundle.js')
   },
 
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
-  },
-
   sassLoader: {
-    importer: importer({ resolvers: ['local', 'node', 'partial'] })
+    importer: importer({resolvers: ['local', 'node', 'partial']})
   },
 
+  //exclude: /node_modules/,
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader?presets[]=es2015,presets[]=react'
-    }, {
-      test: /\.scss$/,
-      loader: 'style-loader!css-loader!sass-loader!postcss?parser=postcss-scss'
-    }]
+    loaders: [
+      {test: /\.jsx?$/, loader: "babel-loader"},
+      {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader!postcss?parser=postcss-scss'}
+    ]
   },
-  postcss: () => [
-    require('postcss-global-scss-vars')({ variables })
-  ]
+
+  plugins: [
+    // this plugin does a better job of detecting file system
+    // changes than running webpack without it
+    new webpack.OldWatchingPlugin()
+  ],
+
+  // we don't want to watch the process of bundling write to the screen
+  progress: false,
+
+
+  resolve: {
+    // the folders where webpack will look for modules
+    // and JS code to bundle should it be imported into 
+    // the application
+    modulesDirectories: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['', '.json', '.js']
+  }
 };

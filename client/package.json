@@ -1,5 +1,5 @@
 {
-  "name": "React.Node.Bootstrap",
+  "name": "React-Node-Bootstrap",
   "version": "1.0.0",
   "description": "Bootstrap project for new React+Node app",
   "author": "David Starr | elegantcode.com | @elegantcoder",
@@ -13,7 +13,6 @@
 
   "dependencies": {
     "react": "0.14.8",
-    "react-bootstrap": "^0.29.4",
     "react-dom": "0.14.8",
     "superagent": "^1.6.1"
   },
