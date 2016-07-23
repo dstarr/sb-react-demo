@@ -10,18 +10,26 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'app.js'),
 
   output: {
-    filename: path.join(dist, 'bundle.js')
+    path: dist,
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
 
   sassLoader: {
     importer: importer({resolvers: ['local', 'node', 'partial']})
   },
 
-  //exclude: /node_modules/,
+
   module: {
     loaders: [
       {test: /\.jsx?$/, loader: "babel-loader"},
-      {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader!postcss?parser=postcss-scss'}
+
+      // Used for Bootstrap Less Source Files
+      { test: /\.less/, loader: 'style!css!less' },
+      // Used for Bootstrap Less Source Files
+      { test: /\.css/, loader: 'style!css' },
+      // Used for Bootstrap Glyphicon Fonts
+      { test: /\.(woff2|woff|ttf|svg|eot)$/, loader: 'file' }
     ]
   },
 
