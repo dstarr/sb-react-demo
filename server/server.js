@@ -18,6 +18,6 @@ app
   module.exports = app;
 
   // run the server
-  http.createServer(app).listen(8080);
+  http.createServer(app).listen(80);
 
 
