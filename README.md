@@ -1,3 +1,3 @@
-# React.js & Node.js Bootstrap
+# React.js & Node.js Demo Code
 
-This is a starting pointing point for creating a Node.js server application with a React.js SPA front end.
+A small application to demo basic React.js.
