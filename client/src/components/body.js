@@ -1,5 +1,5 @@
 import React from 'react';
-import {Panel, PanelGroup, Image, Well} from 'react-bootstrap';
+import { Link, Image } from 'react-bootstrap';
 
 export default class Body extends React.Component {
 
@@ -20,10 +20,10 @@ export default class Body extends React.Component {
 
     var imgCount = 0;
 
-    var imageItems = this.props.images.map(function (image) {
+    var imageItems = this.props.images.map((image) => {
         return (
           <div style={bandStyle} key={imgCount++}>
-            <Image bsClass="img" src={image} width="100%"/>
+            <a href={image.link} ><Image bsClass="img" src={image.path} width="100%" responsive/></a>
           </div>
         );
       }

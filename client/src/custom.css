@@ -8,12 +8,18 @@ body {
 
 .tabLinkColor a:hover {
     color: #000000;
-    textDecoration: none;
+    text-decoration: none;
 }
-
-
 
 img {
     padding: 0;
     margin: 0;
+}
+
+.modal-container {
+    position: relative;
+}
+
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
 }

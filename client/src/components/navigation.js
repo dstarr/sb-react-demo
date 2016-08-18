@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Navbar, MenuItem, Nav, NavItem, Row, Col, NavDropdown, Tab} from 'react-bootstrap';
+import { Navbar, MenuItem, Nav, NavItem, NavDropdownß} from 'react-bootstrap';
 
 
 export default class Navigation extends React.Component {
@@ -15,9 +15,9 @@ export default class Navigation extends React.Component {
         <Navbar.Collapse style={{  backgroundColor:'#0E4D30', margin:0, padding:0 }}>
           <Nav bsStyle="tabs" onSelect={this.props.navItemCallback} className="tabLinkColor">
 
-            <NavItem bStyle={{ color: '#ffffff' }} eventKey={1} href="#">COFFEE</NavItem>
+            <NavItem eventKey={1} href="#">COFFEE</NavItem>
             <NavItem eventKey={2} href="#">TEA</NavItem>
-            <NavItem eventKey={3} href="#">MENU</NavItem>
+            <NavItem eventKey='menu' href="#">MENU</NavItem>
             <NavItem eventKey='coffeehouse' href="#">COFFEEHOUSE</NavItem>
             <NavItem eventKey='responsibility' href="#">RESPONSIBILITY</NavItem>
             <NavItem eventKey={6} href="#">CARD</NavItem>
