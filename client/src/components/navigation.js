@@ -1,31 +1,39 @@
 import React from 'react';
+import { Tabs, Navbar, MenuItem, Nav, NavItem, Row, Col, NavDropdown, Tab} from 'react-bootstrap';
+
 
 export default class Navigation extends React.Component {
 
+  static propTypes = {
+    navItemCallback: React.PropTypes.func.isRequired
+  };
+
+
   render = () => {
     return (
-      <div>
 
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">React-Bootstrap</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
+        <Navbar.Collapse style={{  backgroundColor:'#0E4D30', margin:0, padding:0 }}>
+          <Nav bsStyle="tabs" onSelect={this.props.navItemCallback} className="tabLinkColor">
+
+            <NavItem bStyle={{ color: '#ffffff' }} eventKey={1} href="#">COFFEE</NavItem>
+            <NavItem eventKey={2} href="#">TEA</NavItem>
+            <NavItem eventKey={3} href="#">MENU</NavItem>
+            <NavItem eventKey='coffeehouse' href="#">COFFEEHOUSE</NavItem>
+            <NavItem eventKey='responsibility' href="#">RESPONSIBILITY</NavItem>
+            <NavItem eventKey={6} href="#">CARD</NavItem>
+            <NavItem eventKey='blog' href="#">BLOG</NavItem>
+
+
+            <NavDropdown eventKey={9} title="SHOP" id="basic-nav-dropdown">
+              <MenuItem eventKey={9.1}>COFFEE</MenuItem>
+              <MenuItem eventKey={9.2}>TEA</MenuItem>
+              <MenuItem divider/>
+              <MenuItem eventKey={'COFFEE MACHINES'}>COFFEE MACHINES</MenuItem>
+              <MenuItem eventKey={9.4}>COFFEE CUPS</MenuItem>
             </NavDropdown>
-          </Nav>
-        </Navbar>
 
-      </div>
+          </Nav>
+        </Navbar.Collapse>
     );
   }
 }

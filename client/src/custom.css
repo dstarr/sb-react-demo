@@ -1,0 +1,19 @@
+body {
+    background-color: #000000;
+}
+
+.tabLinkColor a {
+    color: #FFFFFF;
+}
+
+.tabLinkColor a:hover {
+    color: #000000;
+    textDecoration: none;
+}
+
+
+
+img {
+    padding: 0;
+    margin: 0;
+}
