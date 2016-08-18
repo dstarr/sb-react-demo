@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Image} from 'react-bootstrap';
 
-export default class MenuModal extends React.Component {
+export default class MenuPanel extends React.Component {
 
   static propTypes = {
     show : React.PropTypes.bool.isRequired,
