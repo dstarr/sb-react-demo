@@ -1,19 +1,21 @@
 import React from 'react';
-import { Jumbotrpn}
 
-export default class HelloWorld extends React.Component {
+export default class MainAppContainer extends React.Component {
 
   render = () => {
+    
     return (
       <div>
 
-        <h2>Hello World from React.js</h2>
+        <h2>Outermost React App Container Component</h2>
 
         <p>
           Now make something cool!
         </p>
+
       </div>
     );
+    
   }
 }
 
