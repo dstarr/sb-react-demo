@@ -42,7 +42,6 @@ img {
 .close-button {
     color: #ffffff;
     position: relative;
-    font-size:30px;
     padding: 5px;
     margin: 0;
 }
@@ -50,7 +49,6 @@ img {
 .close-button:active {
     color: #ffffff;
     position: relative;
-    font-size:30px;
     padding: 5px;
     margin: 0;
 }

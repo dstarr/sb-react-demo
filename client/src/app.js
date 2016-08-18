@@ -8,5 +8,5 @@ import Hello from './helloComponent';
 const node1 = document.getElementById('app');
 
 if (node1) {
-  ReactDOM.render( <Hello />, node1);
+  ReactDOM.render( <MainContainer />, node1);
 }
