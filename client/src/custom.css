@@ -6,9 +6,20 @@ body {
     color: #FFFFFF;
 }
 
+.tabLinkColor a:active {
+    color: #000000;
+    outline: none;
+}
+
 .tabLinkColor a:hover {
     color: #000000;
-    text-decoration: none;
+    outline: none;
+}
+
+.tabLinkColor a:focus {
+    color: #000000;
+    outline: none;
+
 }
 
 img {
@@ -16,10 +27,30 @@ img {
     margin: 0;
 }
 
-.modal-container {
-    position: relative;
+
+.panel {
+    width: 100%;
+    position: absolute;
+    padding:0;
+    margin: 0;
+    border: 0;
+    background-color: #0E4D30;
+    z-index: 3;
+    align-content: center;
 }
 
-.modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
+.close-button {
+    color: #ffffff;
+    position: relative;
+    font-size:30px;
+    padding: 5px;
+    margin: 0;
+}
+
+.close-button:active {
+    color: #ffffff;
+    position: relative;
+    font-size:30px;
+    padding: 5px;
+    margin: 0;
 }

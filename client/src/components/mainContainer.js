@@ -3,17 +3,21 @@ import React from 'react';
 import Header from './header';
 import Navigation from './navigation';
 import Body from './body';
-import MenuModal from './menuModal';
 
 export default class MainContainer extends React.Component {
 
-  constructor() {
+  render = () => {
 
-    super();
+    return (
+      <div>
 
-    this.state = { showModal : false};
+        <Header text="The Finest Coffee on Earth" />
+        <Navigation navItemCallback={this.handleNav}/>
+        <Body images={this.getPageImages()}/>
 
-  }
+      </div>
+    );
+  };
 
   handleNav = (itemId) => {
 
@@ -31,45 +35,27 @@ export default class MainContainer extends React.Component {
         window.location.href = 'https://1912pike.com/';
         break;
 
-      case 'menu':
-        this.openMenu();
-        break;
-
       default:
-        alert('selected ' + itemId);
+        alert('SELECTED NAV ITEM ' + itemId);
     }
   };
 
-  closeMenu = () => {
-    this.setState({ showModal: false });
-  };
-
-  openMenu = () => {
-    this.setState({ showModal: true });
-  };
-
-  render = () => {
-
-    const bodyImages = [
+  getPageImages = () => {
+    return [
       {
         path: './images/band1.jpg',
-        link : 'http://www.starbucks.com/promo/tea'
+        link: 'http://www.starbucks.com/promo/tea'
       },
       {
         path: './images/band2.png',
-        link : 'http://www.starbucks.com/coffeehouse/mobile-order'
+        link: 'http://www.starbucks.com/coffeehouse/'
+      },
+      {
+        path: './images/footer.png',
+        link: '#'
       }
     ];
+  };
 
-    return (
-      <div>
 
-        <Header />
-        <Navigation navItemCallback={this.handleNav}/>
-        <MenuModal showModal={this.state.showModal} modalClose={this.closeMenu} />
-        <Body images={bodyImages}/>
-
-      </div>
-    );
-  }
 }
