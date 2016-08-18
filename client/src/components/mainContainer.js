@@ -9,7 +9,7 @@ export default class MainContainer extends React.Component {
   render = () => {
 
     return (
-      <div>
+      <div style="text-align:center; position: relative">
 
         <Header text="The Finest Coffee on Earth" />
         <Navigation navItemCallback={this.handleNav}/>
