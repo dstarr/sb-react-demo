@@ -11,15 +11,11 @@ export default class MainContainer extends React.Component {
     return (
       <div>
 
-        <div style={{color:'#ffffff'}}>
+        <Header text="The Finest Coffee on Earth" />
+        <Navigation navItemCallback={this.handleNav} />
+        <Body images={this.getPageImages()} />
 
-          <h2>Hello, from a React.js component</h2>
 
-          <p>
-            Now let's make something cool!
-          </p>
-
-        </div>
 
       </div>
     );

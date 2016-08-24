@@ -9,12 +9,6 @@ export default class Header extends React.Component {
 
   render = () => {
 
-    let text = "HEADER";
-    if(this.props.text !== undefined) {
-      text = this.props.text;
-    }
-
-
     return (
       <div>
           <Grid fluid={true} >
@@ -26,7 +20,7 @@ export default class Header extends React.Component {
               <Col xs={9} md={9} lg={9}>
                 <h2 style={{marginTop:30, color:'#FFFFFF'}}>
 
-                  {text}
+                  {this.props.text}
 
                 </h2>
               </Col>
